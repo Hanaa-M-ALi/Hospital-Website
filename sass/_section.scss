@@ -1,0 +1,57 @@
+#services {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    article {
+      @include gradientBackground;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      height: fit-content;
+      transition: all 400ms ease;
+      &:hover {
+        transform: translateY(-0.5rem);
+      }
+      i {
+        font-size: 1.5rem;
+      }
+      div {
+        h4 {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include medium-device {
+  #services {
+    .container {
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      article {
+        padding: 1.2rem;
+        gap: 0.8rem;
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
+}
+@include small-device {
+  #services {
+    .container {
+      grid-template-columns: 1fr;
+    }
+    article {
+      div {
+        h4 {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+  }
+}
